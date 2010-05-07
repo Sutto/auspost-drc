@@ -34,18 +34,20 @@ module AusPost
         @service_type.nil? ? 'STANDARD' : @service_type
       end
       
+      def service_type=(value)
+        @service_type = value.to_s.strip.empty? ? nil : ServiceType[value.to_s]
+      end
+      
       def to_params_hash
-        {
-          'Pickup_Postcode'      => self.pickup,
-          'Destination_Postcode' => self.destination,
-          'Country'              => self.country,
-          'Service_Type'         => self.service_type,
-          'Weight'               => self.weight,
-          'Length'               => self.length,
-          'Width'                => self.width,
-          'Height'               => self.height,
-          'Quantity'             => self.quantity
-        }
+        {'Pickup_Postcode'      => self.pickup,
+         'Destination_Postcode' => self.destination,
+         'Country'              => self.country,
+         'Service_Type'         => self.service_type,
+         'Weight'               => self.weight,
+         'Length'               => self.length,
+         'Width'                => self.width,
+         'Height'               => self.height,
+         'Quantity'             => self.quantity}
       end
       
       def to_params

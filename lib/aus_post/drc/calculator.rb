@@ -8,10 +8,11 @@ module AusPost
       DRC_BASE_URI = "http://drc.edeliver.com.au/rateCalc.asp"
       
       def initialize(parcel)
-        @parcel = parcel
-        @calculated = false
-        @charge = nil
-        @days = nil
+        @parcel           = parcel
+        @calculated       = false
+        @charge           = nil
+        @charge_as_string = nil
+        @days             = nil
       end
       
       # Once off thing.
@@ -44,12 +45,21 @@ module AusPost
         @days
       end
       
+      def charge_as_string
+        calculate
+        @charge_as_string
+      end
+      
       def charge!
         value_with_exception :charge
       end
       
       def days!
         value_with_exception :days
+      end
+      
+      def charge_as_string!
+        value_with_exception :charge_as_string
       end
       
       protected
@@ -64,15 +74,14 @@ module AusPost
       end
       
       def process_success_body(body)
-        @exception = nil
-        @charge    = body[:charge].to_f
-        @days      = body[:days].to_i
+        @exception        = nil
+        @charge           = body[:charge].to_f
+        @days             = body[:days].to_i
+        @charge_as_string = body[:charge]
       end
       
       def process_error_body(body)
         @exception = Error.new(body)
-        @charge     = nil
-        @days      = nil
       end
       
       def value_with_exception(name)
