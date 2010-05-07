@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'rake'
 
+require "lib/aus_post/drc"
+
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
@@ -10,6 +12,7 @@ begin
     gem.email       = "sutto@sutto.net"
     gem.homepage    = "http://github.com/Sutto/auspost-drc"
     gem.authors     = ["Darcy Laycock"]
+    gem.version     = AusPost::DRC::VERSION
     gem.add_development_dependency "shoulda", ">= 0"
   end
   Jeweler::GemcutterTasks.new
@@ -22,19 +25,6 @@ Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
-end
-
-begin
-  require 'rcov/rcovtask'
-  Rcov::RcovTask.new do |test|
-    test.libs << 'test'
-    test.pattern = 'test/**/test_*.rb'
-    test.verbose = true
-  end
-rescue LoadError
-  task :rcov do
-    abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
-  end
 end
 
 task :test => :check_dependencies

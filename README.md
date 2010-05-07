@@ -44,6 +44,3 @@ With exception-throwing variants:
 Copyright (c) 2010 Darcy Laycock. See LICENSE for details.
 
 Australia Post and other assorted trademarks are copyright Australia Post.
-  
-
-

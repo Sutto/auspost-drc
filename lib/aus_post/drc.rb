@@ -1,7 +1,8 @@
 module AusPost
   module DRC
     
-    Error = Class.new(StandardError)
+    VERSION = "0.1.0".freeze
+    Error   = Class.new(StandardError)
     
     autoload :Parcel,      'aus_post/drc/parcel'
     autoload :Calculator,  'aus_post/drc/calculator'
