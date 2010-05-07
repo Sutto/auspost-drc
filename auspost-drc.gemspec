@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.md",
      "Rakefile",
+     "auspost-drc.gemspec",
      "lib/aus_post/drc.rb",
      "lib/aus_post/drc/calculator.rb",
      "lib/aus_post/drc/parcel.rb",
