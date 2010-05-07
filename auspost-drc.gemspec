@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{auspost-drc}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Darcy Laycock"]
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.md",
      "Rakefile",
      "auspost-drc.gemspec",
+     "lib/aus_post/auspost-drc.rb",
      "lib/aus_post/drc.rb",
      "lib/aus_post/drc/calculator.rb",
      "lib/aus_post/drc/parcel.rb",
