@@ -4,14 +4,13 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "auspost_drc"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "sutto@sutto.net"
-    gem.homepage = "http://github.com/Sutto/auspost_drc"
-    gem.authors = ["Darcy Laycock"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.name        = "auspost-drc"
+    gem.summary     = %Q{AusPost Delivery Rate Calculator Gem}
+    gem.description = %Q{Gem for AusPost Delivery Rate Calculator - Making it easy to calculate shipping}
+    gem.email       = "sutto@sutto.net"
+    gem.homepage    = "http://github.com/Sutto/auspost-drc"
+    gem.authors     = ["Darcy Laycock"]
+    gem.add_development_dependency "shoulda", ">= 0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
